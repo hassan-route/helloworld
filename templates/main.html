@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>ROUTE Python API</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+
+<header>
+
+
+
+</header>
+
+<body>
+	<div >
+ 
+	  <img style="max-width:60px; margin-top: 2px;" src="{{ url_for('static', filename='r.jpg') }}">
+ROUTE APIs
+    </div>
+    
+    
+	<div style="margin:10px; padding:5px; background-color:#FFFFF1;" >
+		<a href="http://localhost:5000/TopThreeUniversities?athleteId=11"> TopThreeUniversities </a>:<br/>
+		example url: http://api.myroute.xyz/TopThreeUniversities?athleteId=11<br/>
+		Get top 3 universities of athlete<br/>
+		parameters: athleteId=11<br/>
+		Returns JSON:<br/>
+        <pre>			
+        {
+          "TopThreeUniversities": [
+            {
+              "Abbreviation": null, 
+              "City": "searcy\r\n", 
+              "Name": "Finlandia", 
+              "State": "NJ", 
+              "athlete_id": 11, 
+              "division": "NCAA_FBS", 
+              "fit_percent": 3.0, 
+              "university_id": 2, 
+              "zip": null
+            }, 
+            {
+              "Abbreviation": null, 
+              "City": "searcy\r\n", 
+              "Name": "Franklin\r\n", 
+              "State": "SC", 
+              "athlete_id": 11, 
+              "division": "NCAA_II", 
+              "fit_percent": 2.0, 
+              "university_id": 3, 
+              "zip": null
+            }, 
+            {
+              "Abbreviation": null, 
+              "City": "searcy\r\n", 
+              "Name": "harding", 
+              "State": "AR", 
+              "athlete_id": 11, 
+              "division": "NCAA_II", 
+              "fit_percent": 1.0, 
+              "university_id": 1, 
+              "zip": null
+            }
+          ]
+        }	
+        </pre>
+
+    </div>
+    	
+    <div style="margin:10px; padding:5px; background-color:#FFFFA3;" >
+		<a href="http://localhost:5000/GetCollegeFitList?coachId=1"> GetCollegeFitList </a>:<br/>
+		example url: http://api.myroute.xyz/GetCollegeFitList?coachId=1<br/>
+		Get University List based on Coach ID and students qualifying for that university.<br/>
+		Retunrs a List of universities and an athlete/student count.<br/>
+		parameters: coachId=1<br/>
+		Returns JSON:<br/>
+        <pre>			
+        {
+          "college": [
+            {
+              "success": true
+            }, 
+            {
+              "City": "searcy\r\n", 
+              "State": "AR", 
+              "athlete_count": 3, 
+              "division": null, 
+              "fit_percent": 0.3, 
+              "university_Id": 1, 
+              "university_Name": "harding", 
+              "user_Id": 11
+            }, 
+            {
+              "City": "searcy\r\n", 
+              "State": "NJ", 
+              "athlete_count": 2, 
+              "division": "NCAA_FBS", 
+              "fit_percent": 3.0, 
+              "university_Id": 2, 
+              "university_Name": "Finlandia", 
+              "user_Id": 11
+            }, 
+            {
+              "City": "searcy\r\n", 
+              "State": "SC", 
+              "athlete_count": 2, 
+              "division": "NCAA_II", 
+              "fit_percent": 2.0, 
+              "university_Id": 3, 
+              "university_Name": "Franklin\r\n", 
+              "user_Id": 11
+            }
+          ]
+        }
+        </pre>
+
+    </div>
+    
+    <div style="margin:10px; padding:5px; background-color:#FFFFF1;" >
+		<a href="http://localhost:5000/GetAthleteByUniversityList?coachId=1&universityId=1"> GetAthleteByUniversityList </a>:<br/>
+		example url: http://api.myroute.xyz/GetAthleteByUniversityList?coachId=1&universityId=1<br/>
+		Get all altheletes under a coach and University<br/>
+		parameters: coachId=1, universityId=1<br/>
+		Returns JSON:<br/>
+        <pre>			
+        {
+          "GetAthleteByUniverity": [
+            {
+              "success": true
+            }, 
+            {
+              "athlete_id": 11, 
+              "b'created_at'": null, 
+              "b'updated_at'": null, 
+              "city": "crofton", 
+              "city_id": null, 
+              "coach_id": null, 
+              "division": "NCAA_FBS", 
+              "dob": "10/11/1980\r\n", 
+              "fit_percent": 3.0, 
+              "fname": "firstname", 
+              "id": 3, 
+              "image": null, 
+              "lname": "lastname", 
+              "school": "crofton high", 
+              "school_id": 1, 
+              "state": "Maryland", 
+              "state_id": null, 
+              "university_id": 2, 
+              "user_id": 11
+            }, 
+            {
+              "athlete_id": 12, 
+              "b'created_at'": null, 
+              "b'updated_at'": null, 
+              "city": "bowie", 
+              "city_id": null, 
+              "coach_id": null, 
+              "division": "NCAA_III", 
+              "dob": "10/11/1980\r\n", 
+              "fit_percent": 45.0, 
+              "fname": "hhhhhh", 
+              "id": 5, 
+              "image": null, 
+              "lname": "lastname", 
+              "school": "bowie high", 
+              "school_id": 2, 
+              "state": "Maryland", 
+              "state_id": null, 
+              "university_id": 2, 
+              "user_id": 12
+            }
+          ]
+        }
+
+        </pre>
+
+    </div>
+    
+    <div style="margin:10px; padding:5px; background-color:#FFFFA3;" >
+		<a href="http://localhost:5000/GetAthleteList?coachId=1"> GetAthleteList </a>:<br/>
+		example url: http://api.myroute.xyz/GetAthleteList?coachId=1<br/>
+		Get all altheletes under a coach<br/>
+		parameters: coachId=1<br/>
+		Returns JSON:<br/>
+        <pre>			
+        {
+          "athletes": [
+            {
+              "NCAA I-FBS": 0.45, 
+              "NCAA I-FCS": 0.5, 
+              "NCAA II": 0.79, 
+              "NCAA III": 0.91, 
+              "b'created_at'": null, 
+              "b'updated_at'": null, 
+              "city": "crofton", 
+              "city_id": null, 
+              "dob": "10/11/1980\r\n", 
+              "fname": "firstname", 
+              "id": 1, 
+              "image": null, 
+              "lname": "lastname", 
+              "school": "crofton high", 
+              "school_id": 1, 
+              "state": "Maryland", 
+              "state_id": null, 
+              "user_id": 11
+            }, 
+            {
+              "NCAA I-FBS": 0.65, 
+              "NCAA I-FCS": 0.59, 
+              "NCAA II": 0.89, 
+              "NCAA III": 0.94, 
+              "b'created_at'": null, 
+              "b'updated_at'": null, 
+              "city": "bowie", 
+              "city_id": null, 
+              "dob": "10/11/1980\r\n", 
+              "fname": "hhhhhh", 
+              "id": 2, 
+              "image": null, 
+              "lname": "lastname", 
+              "school": "bowie high", 
+              "school_id": 2, 
+              "state": "Maryland", 
+              "state_id": null, 
+              "user_id": 12
+            }
+          ]
+        }
+        </pre>
+
+    </div>
+ 
+ </body>
+ 
+ </html>
